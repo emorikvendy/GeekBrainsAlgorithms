@@ -15,7 +15,11 @@ void main() {
     print(array, length);
 
     print(bubble(array, length), length);
+    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    print(array, length);
     print(bubble2(array, length), length);
+    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    print(array, length);
     array = shaker(array, length);
     print(array, length);
 

@@ -38,7 +38,7 @@ int *shaker(int array[], int length) {
             }
         }
         right = tmp;
-        for (int i = right; i > left + 1; --i) {
+        for (int i = right; i > left; --i) {
             if (array[i] < array[i - 1]) {
                 swap(array + i, array + i - 1);
                 tmp = i;
