@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "sort.h"
 
-int *bubble(int *array, int length) {
+void bubble(int *array, int length) {
     int last_change = length - 1, tmp;
     while (last_change > 0) {
         tmp = 0;
@@ -13,10 +13,9 @@ int *bubble(int *array, int length) {
         }
         last_change = tmp;
     }
-    return array;
 }
 
-int *bubble2(int *array, int length) {
+void bubble2(int *array, int length) {
     for (int i = 0; i < length; ++i) {
         for (int j = 0; j < length - i - 1; ++j) {
             if (array[j] > array[j + 1]) {
@@ -24,10 +23,9 @@ int *bubble2(int *array, int length) {
             }
         }
     }
-    return array;
 }
 
-int *shaker(int array[], int length) {
+void shaker(int array[], int length) {
     int left = 0, right = length - 1, tmp;
     while (left < right) {
         tmp = 0;
@@ -46,7 +44,6 @@ int *shaker(int array[], int length) {
         }
         left = tmp;
     }
-    return array;
 }
 
 void swap(int *first, int *second) {

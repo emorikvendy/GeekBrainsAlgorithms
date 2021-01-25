@@ -13,14 +13,15 @@ void main() {
     int length = 10;
     int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
     print(array, length);
-
-    print(bubble(array, length), length);
+    bubble(array, length);
+    print(array, length);
     array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
     print(array, length);
-    print(bubble2(array, length), length);
+    bubble2(array, length);
+    print(array, length);
     array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
     print(array, length);
-    array = shaker(array, length);
+    shaker(array, length);
     print(array, length);
 
     printf("%d position is %d \n", 9, binary(array, length, 9));
