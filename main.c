@@ -11,23 +11,7 @@
 #include "homework4/knight.h"
 
 void main() {
-    int size_y, size_x, move_number = 1;
-    printf("Enter board vertical size: ");
-    scanf("%d", &size_y);
-    printf("Enter board horizontal size: ");
-    scanf("%d", &size_x);
-    printf("\r\n");
-    int **board = init_board(size_y, size_x);
-    print_board(board, size_y, size_x);
-    printf("\r\n");
-    if(move_knight(board, size_y, size_x, 0, 0, move_number)) {
-        print_board(board, size_y, size_x);
-        printf("\r\n");
-    } else {
-        printf("no routes available");
-    }
-
-    free_board(board, size_y);
+    start();
 //    int length = 10;
 //    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
 //    print(array, length);

@@ -74,6 +74,32 @@ void print_board(int **board, int size_y, int size_x) {
     }
 }
 
+void start() {
+    int size_y, size_x, i;
+    printf("Enter board vertical size: ");
+    scanf("%d", &size_y);
+    printf("Enter board horizontal size: ");
+    scanf("%d", &size_x);
+    printf("\r\n");
+    int **board = init_board(size_y, size_x);
+
+    for (i = 0; i < size_y; ++i) {
+        for (int j = 0; j < size_x; ++i) {
+            if (move_knight(board, size_y, size_x, i, j, 1)) {
+                i = size_y;
+                break;
+            }
+        }
+    }
+    if (i == size_y + 1) {
+        print_board(board, size_y, size_x);
+        printf("\r\n");
+    } else {
+        printf("no routes available\r\n");
+    }
+    free_board(board, size_y);
+}
+
 /**
  * Рекурсивный поиск маршрута, используем правило Варнсдорфа
  * @param int[][] board
@@ -91,7 +117,8 @@ int move_knight(int **board, int size_y, int size_x, int y, int x, int move_numb
      * если сделали необходимое кол-во ходов, то выходим из рекурсии
      */
     if (move_number == size_y * size_x) {
-        printf("step number %5d:\tx = %5d y %5d\r\n", move_number, x, y);
+        //printf("step number %5d:\tx = %5d y %5d\r\n", move_number, x, y);
+        board[y][x] = move_number;
         return 1;
     }
     /**
@@ -106,7 +133,8 @@ int move_knight(int **board, int size_y, int size_x, int y, int x, int move_numb
     sort_moves(moves, 0, moves_count - 1);
     for (int i = 0; i < moves_count; i++) {
         if (move_knight(board, size_y, size_x, moves[i].y, moves[i].x, move_number + 1)) {
-            printf("step number %5d:\tx = %5d y %5d\r\n", move_number, x, y);
+            //printf("step number %5d:\tx = %5d y %5d\r\n", move_number, x, y);
+            board[y][x] = move_number;
             free(moves);
             return 1;
         }

@@ -26,4 +26,6 @@ void get_available_moves(int **board, int size_y, int size_x, int y, int x, Move
 
 int move_knight(int **board, int size_y, int size_x, int y, int x, int move_number);
 
+void start();
+
 #endif
