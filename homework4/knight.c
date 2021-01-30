@@ -84,7 +84,7 @@ void start() {
     int **board = init_board(size_y, size_x);
 
     for (i = 0; i < size_y; ++i) {
-        for (int j = 0; j < size_x; ++i) {
+        for (int j = 0; j < size_x; ++j) {
             if (move_knight(board, size_y, size_x, i, j, 1)) {
                 i = size_y;
                 break;
