@@ -8,27 +8,45 @@
 #include "homework2/pow.h"
 #include "homework3/sort.h"
 #include "homework3/search.h"
+#include "homework4/knight.h"
 
 void main() {
-    int length = 10;
-    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-    print(array, length);
-    bubble(array, length);
-    print(array, length);
-    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-    print(array, length);
-    bubble2(array, length);
-    print(array, length);
-    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-    print(array, length);
-    shaker(array, length);
-    print(array, length);
+    int size_y, size_x, move_number = 1;
+    printf("Enter board vertical size: ");
+    scanf("%d", &size_y);
+    printf("Enter board horizontal size: ");
+    scanf("%d", &size_x);
+    printf("\r\n");
+    int **board = init_board(size_y, size_x);
+    print_board(board, size_y, size_x);
+    printf("\r\n");
+    if(move_knight(board, size_y, size_x, 0, 0, move_number)) {
+        print_board(board, size_y, size_x);
+        printf("\r\n");
+    } else {
+        printf("no routes available");
+    }
 
-    printf("%d position is %d \n", 9, binary(array, length, 9));
-    printf("%d position is %d \n", 0, binary(array, length, 0));
-    printf("%d position is %d \n", 6, binary(array, length, 6));
-    printf("%d position is %d \n", 12, binary(array, length, 12));
-    printf("%d position is %d \n", -5, binary(array, length, -5));
+    free_board(board, size_y);
+//    int length = 10;
+//    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+//    print(array, length);
+//    bubble(array, length);
+//    print(array, length);
+//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+//    print(array, length);
+//    bubble2(array, length);
+//    print(array, length);
+//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+//    print(array, length);
+//    shaker(array, length);
+//    print(array, length);
+//
+//    printf("%d position is %d \n", 9, binary(array, length, 9));
+//    printf("%d position is %d \n", 0, binary(array, length, 0));
+//    printf("%d position is %d \n", 6, binary(array, length, 6));
+//    printf("%d position is %d \n", 12, binary(array, length, 12));
+//    printf("%d position is %d \n", -5, binary(array, length, -5));
 
 //    int arr[] = {0, 1, 2, 3, 4, 5};
 //    for (int i = 0; i < 6; ++i) {
