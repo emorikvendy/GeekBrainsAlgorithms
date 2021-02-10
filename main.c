@@ -8,27 +8,40 @@
 #include "homework2/pow.h"
 #include "homework3/sort.h"
 #include "homework3/search.h"
+#include "homework7/graph.h"
 
 void main() {
-    int length = 10;
-    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-    print(array, length);
-    bubble(array, length);
-    print(array, length);
-    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-    print(array, length);
-    bubble2(array, length);
-    print(array, length);
-    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-    print(array, length);
-    shaker(array, length);
-    print(array, length);
+    char *filename = "C:\\Users\\kopie\\CLionProjects\\GeekBrains\\homework7\\matrix.tsv";
+    int size;
+    int **matrix = readMatrix(filename, &size);
+    printMatrix(matrix, size);
+    printf("\nwidth traversal\n");
+    widthTraversal(matrix, size, 0);
+    printf("\ndepth traversal\n");
+    depthTraversal(matrix, size, 0);
+    printf("\ndijkstra\n");
+    dijkstra(matrix, size, 0);
+    freeMatrix(matrix, size);
 
-    printf("%d position is %d \n", 9, binary(array, length, 9));
-    printf("%d position is %d \n", 0, binary(array, length, 0));
-    printf("%d position is %d \n", 6, binary(array, length, 6));
-    printf("%d position is %d \n", 12, binary(array, length, 12));
-    printf("%d position is %d \n", -5, binary(array, length, -5));
+//    int length = 10;
+//    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+//    print(array, length);
+//    bubble(array, length);
+//    print(array, length);
+//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+//    print(array, length);
+//    bubble2(array, length);
+//    print(array, length);
+//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+//    print(array, length);
+//    shaker(array, length);
+//    print(array, length);
+//
+//    printf("%d position is %d \n", 9, binary(array, length, 9));
+//    printf("%d position is %d \n", 0, binary(array, length, 0));
+//    printf("%d position is %d \n", 6, binary(array, length, 6));
+//    printf("%d position is %d \n", 12, binary(array, length, 12));
+//    printf("%d position is %d \n", -5, binary(array, length, -5));
 
 //    int arr[] = {0, 1, 2, 3, 4, 5};
 //    for (int i = 0; i < 6; ++i) {
