@@ -9,9 +9,16 @@
 #include "homework3/sort.h"
 #include "homework3/search.h"
 #include "homework4/knight.h"
+#include "homework5/rpn.h"
+#include "homework5/brackets.h"
 
 void main() {
-    start();
+    brackets();
+    rpn();
+
+//    start();
+
+
 //    int length = 10;
 //    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
 //    print(array, length);
