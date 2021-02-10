@@ -145,6 +145,7 @@ void widthTraversal(int **matrix, int size, int start) {
             printf("route from node %d to node %d does not exist\n", start, i);
         }
     }
+    free(vertexes);
 }
 
 void depthTraversal(int **matrix, int size, int start) {
@@ -185,6 +186,8 @@ void depthTraversal(int **matrix, int size, int start) {
             printf("route from node %d to node %d does not exist\n", start, i);
         }
     }
+    free(route);
+    free(visited_vertexes);
 }
 
 void dijkstra(int **matrix, int size, int start) {
@@ -222,6 +225,7 @@ void dijkstra(int **matrix, int size, int start) {
             active_vertexes[i] = 0;
         }
     }
+    free(active_vertexes);
 
     for (int i = 0; i < size; ++i) {
         if (i == start) {
@@ -236,6 +240,7 @@ void dijkstra(int **matrix, int size, int start) {
         }
 
     }
+    free(route_prices);
 }
 
 void printDijkstraRoute(int **matrix, int size, int to, const int *route_prices) {
@@ -258,4 +263,5 @@ void printDijkstraRoute(int **matrix, int size, int to, const int *route_prices)
         printf("%d ", route[i]);
     }
     printf("\n");
+    free(route);
 }
