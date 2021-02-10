@@ -9,6 +9,9 @@
 #include "homework2/pow.h"
 #include "homework3/sort.h"
 #include "homework3/search.h"
+#include "homework4/knight.h"
+#include "homework5/rpn.h"
+#include "homework5/brackets.h"
 #include "homework6/hash.h"
 #include "homework6/btree.h"
 
@@ -31,6 +34,11 @@ void main() {
 //        printf("%d ", out[i]);
 //    }
 //    printf("\n");
+
+//    brackets();
+//    rpn();
+
+//    start();/
 
 
 //    int length = 10;
