@@ -141,7 +141,7 @@ void insertionSort2(int array[], int length) {
 }
 
 
-void benchmark() {
+void sortsBenchmark() {
     int **arrays = (int **) malloc(counts_length * sizeof(int *)),
             *for_sort;
     struct timeval stop, start;
@@ -163,12 +163,12 @@ void benchmark() {
         printf("quickSort for %d elements %d times took %lu us\n", counts[i], counts[counts_length - 1 - i],
                (stop.tv_sec - start.tv_sec) * 1000000 + stop.tv_usec - start.tv_usec);
         free(for_sort);
-        basicBenchmark(heapSort, "heapSort", arrays[i], counts[i], counts[counts_length - 1 - i]);
-        basicBenchmark(insertionSort, "insertionSort", arrays[i], counts[i], counts[counts_length - 1 - i]);
-        basicBenchmark(insertionSort2, "insertionSort2", arrays[i], counts[i], counts[counts_length - 1 - i]);
-        basicBenchmark(shaker, "shaker", arrays[i], counts[i], counts[counts_length - 1 - i]);
-        basicBenchmark(bubble2, "bubble2", arrays[i], counts[i], counts[counts_length - 1 - i]);
-        basicBenchmark(bubble, "bubble", arrays[i], counts[i], counts[counts_length - 1 - i]);
+        basicSortBenchmark(heapSort, "heapSort", arrays[i], counts[i], counts[counts_length - 1 - i]);
+        basicSortBenchmark(insertionSort, "insertionSort", arrays[i], counts[i], counts[counts_length - 1 - i]);
+        basicSortBenchmark(insertionSort2, "insertionSort2", arrays[i], counts[i], counts[counts_length - 1 - i]);
+        basicSortBenchmark(shaker, "shaker", arrays[i], counts[i], counts[counts_length - 1 - i]);
+        basicSortBenchmark(bubble2, "bubble2", arrays[i], counts[i], counts[counts_length - 1 - i]);
+        basicSortBenchmark(bubble, "bubble", arrays[i], counts[i], counts[counts_length - 1 - i]);
     }
     for (int i = 0; i < counts_length; ++i) {
         free(arrays[i]);
@@ -176,7 +176,7 @@ void benchmark() {
     free(arrays);
 }
 
-void basicBenchmark(void (*sort)(int *, int), char *sort_name, int *array, int length, int repeats) {
+void basicSortBenchmark(void (*sort)(int *, int), char *sort_name, int *array, int length, int repeats) {
     struct timeval stop, start;
     int *for_sort = (int *) malloc(length * sizeof(int));
     gettimeofday(&start, NULL);

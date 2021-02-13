@@ -77,8 +77,7 @@ void main() {
     print(array, length);
     insertionSort2(array, length);
     print(array, length);
-    free(array);
-   benchmark();
+    sortsBenchmark();
 //
 //    printf("%d position is %d \n", 9, binary(array, length, 9));
 //    printf("%d position is %d \n", 0, binary(array, length, 0));

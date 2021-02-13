@@ -21,8 +21,8 @@ void insertionSort(int array[], int length);
 
 void insertionSort2(int array[], int length);
 
-void benchmark();
+void sortsBenchmark();
 
-void basicBenchmark(void (*sort)(int *, int), char *sort_name, int *array, int length, int repeats);
+void basicSortBenchmark(void (*sort)(int *, int), char *sort_name, int *array, int length, int repeats);
 
 #endif
