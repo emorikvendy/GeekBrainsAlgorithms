@@ -16,18 +16,18 @@
 #include "homework6/btree.h"
 
 void main() {
-    struct Node *node;
-    char *filename = (char *) malloc(255 * sizeof(char));
-    int print_type;
-    printf("Enter path to data file\n");
-    scanf("%s", filename);
-    node = fromFile(filename);
-    printf("Enter the print type of the tree\n%d - left root right\n%d - root left right\n%d - right root left\n%d - brackets\n",
-           LEFT_ROOT_RIGHT, ROOT_LEFT_RIGHT, RIGHT_ROOT_LEFT, BRACKETS);
-    scanf("%d", &print_type);
-    printTree(node, print_type);
-    printf("\n");
-    free(filename);
+//    struct Node *node;
+//    char *filename = (char *) malloc(255 * sizeof(char));
+//    int print_type;
+//    printf("Enter path to data file\n");
+//    scanf("%s", filename);
+//    node = fromFile(filename);
+//    printf("Enter the print type of the tree\n%d - left root right\n%d - root left right\n%d - right root left\n%d - brackets\n",
+//           LEFT_ROOT_RIGHT, ROOT_LEFT_RIGHT, RIGHT_ROOT_LEFT, BRACKETS);
+//    scanf("%d", &print_type);
+//    printTree(node, print_type);
+//    printf("\n");
+//    free(filename);
 
 //    char *out = from_stdin();
 //    for (int i = 0; i < RESULT_SIZE; i++) {
@@ -41,19 +41,44 @@ void main() {
 //    start();/
 
 
-//    int length = 10;
-//    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-//    print(array, length);
-//    bubble(array, length);
-//    print(array, length);
-//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-//    print(array, length);
-//    bubble2(array, length);
-//    print(array, length);
-//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-//    print(array, length);
-//    shaker(array, length);
-//    print(array, length);
+    int length = 10;
+    int *array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("bubble:\n");
+    print(array, length);
+    bubble(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("bubble2:\n");
+    print(array, length);
+    bubble2(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("shaker:\n");
+    print(array, length);
+    shaker(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("heapSort:\n");
+    print(array, length);
+    heapSort(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("quickSort:\n");
+    print(array, length);
+    quickSort(array, 0, length - 1);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("insertionSort:\n");
+    print(array, length);
+    insertionSort(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("insertionSort2:\n");
+    print(array, length);
+    insertionSort2(array, length);
+    print(array, length);
+    free(array);
+   benchmark();
 //
 //    printf("%d position is %d \n", 9, binary(array, length, 9));
 //    printf("%d position is %d \n", 0, binary(array, length, 0));
