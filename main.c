@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <limits.h>
 #include "homework1/automorphic_numbers.h"
 #include "homework1/random.h"
@@ -8,6 +9,11 @@
 #include "homework2/pow.h"
 #include "homework3/sort.h"
 #include "homework3/search.h"
+#include "homework4/knight.h"
+#include "homework5/rpn.h"
+#include "homework5/brackets.h"
+#include "homework6/hash.h"
+#include "homework6/btree.h"
 #include "homework7/graph.h"
 
 void main() {
@@ -22,6 +28,30 @@ void main() {
     printf("\ndijkstra\n");
     dijkstra(matrix, size, 0);
     freeMatrix(matrix, size);
+
+//    struct Node *node;
+//    char *filename = (char *) malloc(255 * sizeof(char));
+//    int print_type;
+//    printf("Enter path to data file\n");
+//    scanf("%s", filename);
+//    node = fromFile(filename);
+//    printf("Enter the print type of the tree\n%d - left root right\n%d - root left right\n%d - right root left\n%d - brackets\n",
+//           LEFT_ROOT_RIGHT, ROOT_LEFT_RIGHT, RIGHT_ROOT_LEFT, BRACKETS);
+//    scanf("%d", &print_type);
+//    printTree(node, print_type);
+//    printf("\n");
+//    free(filename);
+
+//    char *out = from_stdin();
+//    for (int i = 0; i < RESULT_SIZE; i++) {
+//        printf("%d ", out[i]);
+//    }
+//    printf("\n");
+
+//    brackets();
+//    rpn();
+
+//    start();
 
 //    int length = 10;
 //    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
