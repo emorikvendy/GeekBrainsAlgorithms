@@ -14,20 +14,33 @@
 #include "homework5/brackets.h"
 #include "homework6/hash.h"
 #include "homework6/btree.h"
+#include "homework7/graph.h"
 
 void main() {
-    struct Node *node;
-    char *filename = (char *) malloc(255 * sizeof(char));
-    int print_type;
-    printf("Enter path to data file\n");
-    scanf("%s", filename);
-    node = fromFile(filename);
-    printf("Enter the print type of the tree\n%d - left root right\n%d - root left right\n%d - right root left\n%d - brackets\n",
-           LEFT_ROOT_RIGHT, ROOT_LEFT_RIGHT, RIGHT_ROOT_LEFT, BRACKETS);
-    scanf("%d", &print_type);
-    printTree(node, print_type);
-    printf("\n");
-    free(filename);
+    char *filename = "C:\\Users\\kopie\\CLionProjects\\GeekBrains\\homework7\\matrix.tsv";
+    int size;
+    int **matrix = readMatrix(filename, &size);
+    printMatrix(matrix, size);
+    printf("\nwidth traversal\n");
+    widthTraversal(matrix, size, 0);
+    printf("\ndepth traversal\n");
+    depthTraversal(matrix, size, 0);
+    printf("\ndijkstra\n");
+    dijkstra(matrix, size, 0);
+    freeMatrix(matrix, size);
+
+//    struct Node *node;
+//    char *filename = (char *) malloc(255 * sizeof(char));
+//    int print_type;
+//    printf("Enter path to data file\n");
+//    scanf("%s", filename);
+//    node = fromFile(filename);
+//    printf("Enter the print type of the tree\n%d - left root right\n%d - root left right\n%d - right root left\n%d - brackets\n",
+//           LEFT_ROOT_RIGHT, ROOT_LEFT_RIGHT, RIGHT_ROOT_LEFT, BRACKETS);
+//    scanf("%d", &print_type);
+//    printTree(node, print_type);
+//    printf("\n");
+//    free(filename);
 
 //    char *out = from_stdin();
 //    for (int i = 0; i < RESULT_SIZE; i++) {
@@ -38,8 +51,7 @@ void main() {
 //    brackets();
 //    rpn();
 
-//    start();/
-
+//    start();
 
 //    int length = 10;
 //    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
