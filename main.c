@@ -14,6 +14,7 @@
 #include "homework5/brackets.h"
 #include "homework6/hash.h"
 #include "homework6/btree.h"
+#include "homework7/graph.h"
 
 void main() {
 //    struct Node *node;
@@ -38,8 +39,7 @@ void main() {
 //    brackets();
 //    rpn();
 
-//    start();/
-
+//    start();
 
     int length = 10;
     int *array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
