@@ -17,18 +17,6 @@
 #include "homework7/graph.h"
 
 void main() {
-    char *filename = "C:\\Users\\kopie\\CLionProjects\\GeekBrains\\homework7\\matrix.tsv";
-    int size;
-    int **matrix = readMatrix(filename, &size);
-    printMatrix(matrix, size);
-    printf("\nwidth traversal\n");
-    widthTraversal(matrix, size, 0);
-    printf("\ndepth traversal\n");
-    depthTraversal(matrix, size, 0);
-    printf("\ndijkstra\n");
-    dijkstra(matrix, size, 0);
-    freeMatrix(matrix, size);
-
 //    struct Node *node;
 //    char *filename = (char *) malloc(255 * sizeof(char));
 //    int print_type;
@@ -53,19 +41,43 @@ void main() {
 
 //    start();
 
-//    int length = 10;
-//    int *array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-//    print(array, length);
-//    bubble(array, length);
-//    print(array, length);
-//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-//    print(array, length);
-//    bubble2(array, length);
-//    print(array, length);
-//    array = (int[]){9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
-//    print(array, length);
-//    shaker(array, length);
-//    print(array, length);
+    int length = 10;
+    int *array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("bubble:\n");
+    print(array, length);
+    bubble(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("bubble2:\n");
+    print(array, length);
+    bubble2(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("shaker:\n");
+    print(array, length);
+    shaker(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("heapSort:\n");
+    print(array, length);
+    heapSort(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("quickSort:\n");
+    print(array, length);
+    quickSort(array, 0, length - 1);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("insertionSort:\n");
+    print(array, length);
+    insertionSort(array, length);
+    print(array, length);
+    array = (int[]) {9, 1, 7, 8, 2, 4, 3, 5, 6, 0};
+    printf("insertionSort2:\n");
+    print(array, length);
+    insertionSort2(array, length);
+    print(array, length);
+    sortsBenchmark();
 //
 //    printf("%d position is %d \n", 9, binary(array, length, 9));
 //    printf("%d position is %d \n", 0, binary(array, length, 0));
